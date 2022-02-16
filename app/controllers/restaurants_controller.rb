@@ -16,9 +16,22 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to restaurant_path(@restaurant)
     else
-      render 'new.html.erb'
+      render :new
     end
   end
+
+  # def create
+  #   @review = Review.new(review_params)
+  #   @restaurant = Restaurant.find(params[:restaurant_id])
+  #   @review.restaurant = @restaurant
+  #   if @review.save
+  #     redirect_to restaurant_path(@restaurant)
+  #   else
+  #     render :new
+  #   end
+  # end
+
+  private
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :category)
