@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
 
-    # we need `restaurant_id` to associate review with corresponding restaurant
+    # we need `restaurant_id` to associate review with corresponding restaurantd
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review.restaurant = @restaurant
     if @review.save
