@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_025259) do
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone_number"
-    t.string "category"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 20_220_216_055_518) do
+  create_table 'restaurants', force: :cascade do |t|
+    t.string 'name'
+    t.string 'address'
+    t.string 'phone_number'
+    t.string 'category'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.string "content"
-    t.integer "restaurant_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'reviews', force: :cascade do |t|
+    t.integer 'rating'
+    t.string 'content'
+    t.integer 'restaurant_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
+  add_foreign_key 'reviews', 'restaurants'
 end

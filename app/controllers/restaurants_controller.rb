@@ -19,4 +19,8 @@ class RestaurantsController < ApplicationController
       render 'new.html.erb'
     end
   end
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :category)
+  end
 end
